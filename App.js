@@ -4,13 +4,14 @@ import { StackNavigator } from 'react-navigation';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
+    headerRight: <Button title="GameMaster" />,
     title: 'Home',
   };
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View>
-        <Text>Inspect Players</Text>
+        <Text style={styles.text}>Inspect Players</Text>
         <Button
           onPress={() => navigate('P1', { user: 'theclaw124' })}
           title="theclaw124"
@@ -42,7 +43,7 @@ class Player1 extends React.Component {
     const { params } = this.props.navigation.state;
     return (
       <View>
-        <Text>Inspecting {params.user}</Text>
+        <Text style={styles.text}>Inspecting {params.user}</Text>
       </View>
     );
   }
@@ -58,7 +59,7 @@ class Player2 extends React.Component {
     const { params } = this.props.navigation.state;
     return (
       <View>
-        <Text>Inspecting {params.user}</Text>
+        <Text style={styles.text}>Inspecting {params.user}</Text>
       </View>
     );
   }
@@ -74,7 +75,7 @@ class Player3 extends React.Component {
     const { params } = this.props.navigation.state;
     return (
       <View>
-        <Text>Inspecting {params.user}</Text>
+        <Text style={styles.text}>Inspecting {params.user}</Text>
       </View>
     );
   }
@@ -90,7 +91,7 @@ class Player4 extends React.Component {
     const { params } = this.props.navigation.state;
     return (
       <View>
-        <Text>Inspecting {params.user}</Text>
+        <Text style={styles.text}>Inspecting {params.user}</Text>
       </View>
     );
   }
@@ -116,5 +117,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  text: {
+    fontFamily: 'Avenir',
+    fontWeight: '500',
+    textAlign: 'center',
+    fontSize: 25,
   }
 });
