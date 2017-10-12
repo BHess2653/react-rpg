@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, Button } from 'react-native';
 
@@ -35,14 +36,6 @@ export default class App extends React.Component {
               <Text style={styles.OtherText}>My Games</Text>
             </View>
           </View>
-
-        </View>
-        <View style={styles.bottomNav}>
-        <Button
-          title="Bottom Nav"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
 
         </View>
       </View>
