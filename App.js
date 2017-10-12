@@ -1,142 +1,120 @@
-
 import React from 'react';
-import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, Button } from 'react-native';
+import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, Button, AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View>
+        <Text>Inspect Players</Text>
+        <Button
+          onPress={() => navigate('P1', { user: 'theclaw124' })}
+          title="theclaw124"
+        />
+        <Button
+          onPress={() => navigate('P2', { user: 'Magtheridon125' })}
+          title="Magtheridon125"
+        />
+        <Button
+          onPress={() => navigate('P3', { user: 'Sonic2653' })}
+          title="Sonic2653"
+        />
+        <Button
+          onPress={() => navigate('P4', { user: 'ParagonApple' })}
+          title="ParagonApple"
+        />
+      </View>
+    );
+  }
+}
+
+class Player1 extends React.Component {
+  // Nav options can be defined as a function of the screen's props:
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.user}`,
+  });
+  render() {
+    // The screen's current route is passed in to `props.navigation.state`:
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <Text>Inspecting {params.user}</Text>
+      </View>
+    );
+  }
+}
+
+class Player2 extends React.Component {
+  // Nav options can be defined as a function of the screen's props:
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.user}`,
+  });
+  render() {
+    // The screen's current route is passed in to `props.navigation.state`:
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <Text>Inspecting {params.user}</Text>
+      </View>
+    );
+  }
+}
+
+class Player3 extends React.Component {
+  // Nav options can be defined as a function of the screen's props:
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.user}`,
+  });
+  render() {
+    // The screen's current route is passed in to `props.navigation.state`:
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <Text>Inspecting {params.user}</Text>
+      </View>
+    );
+  }
+}
+
+class Player4 extends React.Component {
+  // Nav options can be defined as a function of the screen's props:
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.user}`,
+  });
+  render() {
+    // The screen's current route is passed in to `props.navigation.state`:
+    const { params } = this.props.navigation.state;
+    return (
+      <View>
+        <Text>Inspecting {params.user}</Text>
+      </View>
+    );
+  }
+}
+
+export const SimpleApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  P1: { screen: Player1 },
+  P2: { screen: Player2 },
+  P3: { screen: Player3 },
+  P4: { screen: Player4 },
+});
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Image source={require('./header_logo.png')} style={styles.logo}/>
-          <Text style={styles.headerText}>Logout</Text>
-          <Text style={styles.headerText}>Username</Text>
-        </View>
-        <View style={styles.contentContainer}>
-          <View style={[styles.flex1, styles.inputs]}>
-            <View style={styles.inputcontainer}>
-              <TextInput style={styles.textinput} placeholder={"Enter a code"}/>
-              <Button
-                title="Join"
-                color="#841584"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View>
-          <View style={[styles.flex1, styles.inputs]}>
-            <View style={styles.btncontainer}>
-              <Button
-                title="Create Game"
-                color="#841584"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View>
-          <View style={[styles.flex1, styles.inputs]}>
-            <View style={styles.btncontainer}>
-              <Text style={styles.OtherText}>My Games</Text>
-            </View>
-          </View>
-
-        </View>
-      </View>
-    );
+    return <SimpleApp />;
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#b5aca0',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  header: {
-    backgroundColor: '#000',
-    flex: 2,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  contentContainer: {
-    flex: 15,
-    backgroundColor: 'rgb(128,128,128)',
-    alignSelf: 'stretch',
-  },
-  list: {
-    // backgroundColor: 'red',
-    flexDirection: 'row',
-  },
-  listitem: {
-    backgroundColor: 'white',
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 20,
-    marginBottom: 1,
-    height: 75,
-    width: 50,
-  },
-  listitemtext: {
-    // textAlign: 'center'
-  },
-  headerText: {
-    color: 'white',
-    fontFamily: 'Avenir',
-    fontWeight: '900',
-    fontSize: 25
-  },
-  logo: {
-    height: 50,
-    width: 50,
-    resizeMode: 'contain'
-  },
-  flex1: {
-    flex: 1
-  },
-  bottomNav: {
-    flex: 1
-  },
-  textinput: {
-    backgroundColor: 'white',
-    height: 40,
-    borderWidth: 2,
-    borderColor: 'rgb(200,200,200)',
-    borderStyle: 'solid',
-    width: 80,
-    flex: 2,
-  },
-  inputs: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  labeltext: {
-    flex: 1,
-  },
-  inputcontainer: {
-    flex: 1,
-    flexDirection: 'row',
+    backgroundColor: '#fff',
     alignItems: 'center',
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 50,
-    paddingRight: 50,
-    marginBottom: 1,
-    height: 75,
-    width: 50,
-    backgroundColor: 'white',
-    borderWidth: 3,
-  },
-  btncontainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingLeft: 50,
-    paddingRight: 50,
-    marginBottom: 1,
-    height: 75,
-    width: 50,
-    backgroundColor: 'white',
-    borderWidth: 3,
+    justifyContent: 'center'
   }
 });
