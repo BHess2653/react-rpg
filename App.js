@@ -2,6 +2,14 @@ import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
+import * as firebase from 'firebase';
+
+firebase.initializeApp({
+    apiKey: "AIzaSyCwhwQBvZsscmU8Tcee6kTK557Mn5MO9nk",
+    authDomain: "react-rpg-61b84.firebaseapp.com",
+    databaseURL: "https://react-rpg-61b84.firebaseio.com",
+    storageBucket: "react-rpg-61b84.appspot.com"
+});
 
 class ProfileScreen extends React.Component {
   static navigationOptions = {
