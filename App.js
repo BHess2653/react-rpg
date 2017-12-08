@@ -23,7 +23,6 @@ class ProfileScreen extends React.Component {
           style={styles.image}
           source={require('./src/img/icon3.png')}
         />
-        <Text style={[styles.text, styles.title]}>Options:</Text>
         <Button
           style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
           onPress={() => navigate('New', { user: 'New Game' })}
@@ -31,18 +30,14 @@ class ProfileScreen extends React.Component {
         <Button
           style={[styles.btns, style={backgroundColor: '#f1ad4f'}]}
           onPress={() => navigate('Old', { user: 'Current Games' })}
-        ><Text style={styles.btnTxt}>Created Games</Text></Button>
-        <View style={styles.views}>
-          <Text style={[styles.text, styles.title]}>Profile Info:</Text>
-          <Text style={styles.text}>Games Finished: 5</Text>
-          <Text style={styles.text}>Characters: 2</Text>
-          <Text style={styles.text}>Characters Killed: 1</Text>
-          <Text style={styles.text}>Characters Finished: 1</Text>
-        </View>
+        ><Text style={styles.btnTxt}>Join Game</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#007aff'}]}
+        ><Text style={styles.btnTxt}>My Games</Text></Button>
         <Button
           style={[styles.btns]}
           onPress={() => navigate('Log')}
-        ><Text style={style={fontSize: 20}}>Logout</Text></Button>
+        ><Text style={[styles.btnTxt,style={fontSize: 20}]}>Logout</Text></Button>
       </View>
     );
   }
@@ -82,8 +77,18 @@ class Login extends React.Component {
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Profile')}
-        ><Text style={styles.btnTxt}>Login</Text></Button>
+        ><Text style={styles.btnTxt}>Sign-In</Text></Button>
+
+        <TextInput style={styles.textInput} placeholder={"E-mail"}/>
+        <TextInput style={styles.textInput} placeholder={"Username"}/>
+        <TextInput style={styles.textInput} placeholder={"Password"}/>
+        <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#007aff'}]}
+          onPress={() => navigate('Profile')}
+        ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
       </View>
+
     );
   }
 }
@@ -97,11 +102,8 @@ class NewGame extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Campaign Name?"}/>
-        <TextInput style={styles.textInput} placeholder={"Terrain Type?"}/>
-        <TextInput style={styles.textInput} placeholder={"Starting Location?"}/>
-        <TextInput style={styles.textInput} placeholder={"Starting Enemies?"}/>
-        <TextInput style={styles.textInput} placeholder={"How Many Players?"}/>
+        <TextInput style={styles.textInput} placeholder={"Game Name?"}/>
+        <TextInput style={styles.textInput} placeholder={"How many players?"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Players', { user: 'New Game' })}
@@ -119,13 +121,13 @@ class Players extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
+        <Text style={styles.text}>Send this code to your friends</Text>
+        <Text style={styles.text}>Code: cQ4Bx8</Text>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Profile')}>
-          <Text style={styles.btnTxt}>Add Players</Text>
+          <Text style={styles.btnTxt}>Link: link.com/cQ4Bx8</Text>
         </Button>
-        <Text style={styles.text}>Send this code to your friends</Text>
-        <Text style={styles.text}>Code: cQ4Bx8</Text>
         <Button
           style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
           onPress={() => navigate('Profile')}
@@ -197,7 +199,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   currentGames: {
-    paddingTop: 200,
+    paddingTop: 100,
   },
   text: {
     fontFamily: 'Avenir',
