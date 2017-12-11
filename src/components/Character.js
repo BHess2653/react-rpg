@@ -19,7 +19,7 @@ export default class Character extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Starting Ability..."}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Players', { user: 'New Game' })}
+          onPress={() => navigate('Joined', { user: 'New Game' })}
         ><Text style={styles.btnTxt}>Finish</Text></Button>
       </View>
     );

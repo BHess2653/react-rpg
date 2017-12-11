@@ -14,7 +14,7 @@ export default class MyGames extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Game Name"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile', { user: 'New Game' })}
+          onPress={() => navigate('Menu', { user: 'New Game' })}
         ><Text style={styles.btnTxt}>Home</Text></Button>
       </View>
     );

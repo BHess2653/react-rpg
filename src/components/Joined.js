@@ -17,7 +17,7 @@ export default class Joined extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile', { user: 'New Game' })}
+          onPress={() => navigate('Menu', { user: 'New Game' })}
         ><Text style={styles.btnTxt}>Home</Text></Button>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}

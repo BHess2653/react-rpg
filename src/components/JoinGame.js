@@ -14,7 +14,7 @@ export default class JoinGame extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Enter Code"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Joined', { user: 'New Game' })}
+          onPress={() => navigate('Character', { user: 'New Game' })}
         ><Text style={styles.btnTxt}>Next</Text></Button>
       </View>
     );

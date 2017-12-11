@@ -3,9 +3,9 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-export default class ProfileScreen extends React.Component {
+export default class Menu extends React.Component {
   static navigationOptions = {
-    title: 'GameMaster',
+    title: 'Main Menu',
   };
   render() {
     const { navigate } = this.props.navigation;

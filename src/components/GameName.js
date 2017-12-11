@@ -11,13 +11,13 @@ export default class GameName extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
+        <Text style={styles.text}>Waiting...</Text>
+        <Text style={styles.text}>Waiting...</Text>
+        <Text style={styles.text}>Waiting...</Text>
+        <Text style={styles.text}>Waiting...</Text>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile', { user: 'New Game' })}
+          onPress={() => navigate('Menu', { user: 'New Game' })}
         ><Text style={styles.btnTxt}>Home</Text></Button>
       </View>
     );
@@ -37,8 +37,16 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Avenir',
     fontWeight: '500',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 25,
+    width: 350,
+    height: 50,
+    paddingTop: 10,
+    paddingLeft: 5,
+    marginTop: 5,
+    marginLeft: 30,
+    borderWidth: 2,
+    borderColor: '#bfbfbf',
   },
   textInput: {
     fontFamily: 'Avenir',

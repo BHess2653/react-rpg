@@ -15,7 +15,7 @@ export default class Login extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Password"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile')}
+          onPress={() => navigate('Menu')}
         ><Text style={styles.btnTxt}>Sign-In</Text></Button>
 
         <TextInput style={styles.textInput} placeholder={"E-mail"}/>
@@ -24,7 +24,7 @@ export default class Login extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile')}
+          onPress={() => navigate('Menu')}
         ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
       </View>
 
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontFamily: 'Avenir',
     fontWeight: '500',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 25,
     width: 350,
     height: 50,

@@ -15,7 +15,7 @@ export default class Login extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Password"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile')}
+          onPress={() => navigate('Menu')}
         ><Text style={styles.btnTxt}>Login</Text></Button>
       </View>
     );

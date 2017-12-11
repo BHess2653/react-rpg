@@ -15,7 +15,7 @@ export default class Players extends React.Component {
         <Text style={styles.text}>Code: cQ4Bx8</Text>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Profile')}>
+          onPress={() => navigate('Menu')}>
           <Text style={styles.btnTxt}>Link: link.com/cQ4Bx8</Text>
         </Button>
         <Button
