@@ -3,25 +3,32 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-export default class Login extends React.Component {
+export default class PlayerView extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: 'Login',
+    title: 'Dahakas Inventory',
   });
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Username"}/>
-        <TextInput style={styles.textInput} placeholder={"Password"}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu')}
-        ><Text style={styles.btnTxt}>Login</Text></Button>
+        <Text style={[styles.text, styles.title]}>Equipment:</Text>
+        <View>
+          <Text style={[styles.text]}>Basic Robes</Text>
+          <Text style={[styles.text]}>Basic Armor</Text>
+          <Text style={[styles.text]}>Basic Staff</Text>
+        </View>
+        
+        <Text style={[styles.text, styles.title]}>Inventory:</Text>
+        <View>
+          <Text style={[styles.text]}>23 Mana Potions</Text>
+          <Text style={[styles.text]}>23 Health Potions</Text>
+          <Text style={[styles.text]}>Basic Sword</Text>
+          <Text style={[styles.text]}>Basic Shield</Text>
+        </View>
       </View>
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   currentGames: {
-    paddingTop: 200,
+    paddingTop: 100,
   },
   text: {
     fontFamily: 'Avenir',
@@ -42,14 +49,14 @@ const styles = StyleSheet.create({
   textInput: {
     fontFamily: 'Avenir',
     fontWeight: '500',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 25,
     width: 350,
-    height: 50,
     marginTop: 5,
     marginLeft: 30,
     borderWidth: 2,
     borderColor: '#bfbfbf',
+    backgroundColor: '#fff',
   },
   title: {
     color: 'green',

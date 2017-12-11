@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     borderWidth: 2,
     borderColor: '#bfbfbf',
+    backgroundColor: '#fff',
   },
   title: {
     color: 'green',

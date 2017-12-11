@@ -11,7 +11,10 @@ export default class MyGames extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Game Name"}/>
+      <Button
+        style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+        onPress={() => navigate('Joined', { user: 'New Game' })}
+      ><Text style={styles.btnTxt}>Game Name</Text></Button>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Menu', { user: 'New Game' })}
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     borderWidth: 2,
     borderColor: '#bfbfbf',
+    backgroundColor: '#fff',
   },
   title: {
     color: 'green',

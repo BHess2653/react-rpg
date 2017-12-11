@@ -10,7 +10,8 @@ import JoinGame from './src/components/JoinGame';
 import Joined from './src/components/Joined';
 import MyGames from './src/components/MyGames';
 import GameName from './src/components/GameName';
-import Character from './src/components/Character'
+import Character from './src/components/Character';
+import PlayerView from './src/components/PlayerView';
 import * as firebase from 'firebase';
 
 firebase.initializeApp({
@@ -30,6 +31,7 @@ export const SimpleApp = StackNavigator({
   MyGames: { screen: MyGames },
   GameName: { screen: GameName },
   Character: { screen: Character },
+  PlayerView: { screen: PlayerView },
 });
 
 export default class App extends React.Component {

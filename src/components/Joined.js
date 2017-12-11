@@ -11,18 +11,31 @@ export default class Joined extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Dahaka - Male - Paladin"}/>
-        <TextInput style={styles.textInput} placeholder={"Magtheridon - Male - Warrior"}/>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
-        <TextInput style={styles.textInput} placeholder={"Waiting..."}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Home</Text></Button>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('MyGames', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>My Games</Text></Button>
+        <View>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+            onPress={() => navigate('PlayerView', { user: 'New Game' })}
+          ><Text style={styles.btnTxtNew}>Dahaka - Male - Paladin</Text></Button>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
+        </View>
+        <View>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#007aff'}]}
+            onPress={() => navigate('Menu', { user: 'New Game' })}
+          ><Text style={styles.btnTxt}>Home</Text></Button>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#007aff'}]}
+            onPress={() => navigate('MyGames', { user: 'New Game' })}
+          ><Text style={styles.btnTxt}>My Games</Text></Button>
+        </View>
       </View>
     );
   }
@@ -55,6 +68,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     borderWidth: 2,
     borderColor: '#bfbfbf',
+    backgroundColor: '#fff',
   },
   title: {
     color: 'green',
@@ -79,7 +93,11 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(241, 173, 79, 0)',
   },
   btnTxt: {
-    color: 'white',
+    color: '#fff',
+    fontSize: 20,
+  },
+  btnTxtNew: {
+    color: '#fff',
     fontSize: 20,
   },
 });
