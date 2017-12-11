@@ -11,6 +11,7 @@ export default class Joined extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
+        <Text style={styles.info}>Click on a Player to View their Inventory</Text>
         <View>
           <Button
             style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
@@ -99,5 +100,9 @@ const styles = StyleSheet.create({
   btnTxtNew: {
     color: '#fff',
     fontSize: 20,
+  },
+  info: {
+    left: 35,
+    fontSize: 15,
   },
 });
