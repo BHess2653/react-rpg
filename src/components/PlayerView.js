@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { StyleSheet, FlatList, Text, View, Image, ScrollView, TextInput, AppRegistry } from 'react-native';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
@@ -10,22 +10,47 @@ export default class PlayerView extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.currentGames}>
+      <ScrollView style={styles.currentGames}>
+      <Text style={[styles.text, styles.title]}>Name:</Text>
+      <View>
+        <Text style={[styles.text]}>Dahaka</Text>
+      </View>
+
+      <Text style={[styles.text, styles.title]}>Gender:</Text>
+      <View>
+        <Text style={[styles.text]}>Male</Text>
+      </View>
+
+      <Text style={[styles.text, styles.title]}>Race:</Text>
+      <View>
+        <Text style={[styles.text]}>Human</Text>
+      </View>
+
+      <Text style={[styles.text, styles.title]}>Class:</Text>
+      <View>
+        <Text style={[styles.text]}>Paladin of the Silver Hand</Text>
+      </View>
+
+        <Text style={[styles.text, styles.title]}>Backstory:</Text>
+        <View>
+          <Text style={[styles.text]}>Just a Noble wizard on a journey</Text>
+        </View>
+
         <Text style={[styles.text, styles.title]}>Equipment:</Text>
         <View>
           <Text style={[styles.text]}>Basic Robes</Text>
           <Text style={[styles.text]}>Basic Armor</Text>
-          <Text style={[styles.text]}>Basic Staff</Text>
+          <Text style={[styles.text]}>Basic Sword</Text>
+          <Text style={[styles.text]}>Basic Shield</Text>
         </View>
-        
+
         <Text style={[styles.text, styles.title]}>Inventory:</Text>
         <View>
           <Text style={[styles.text]}>23 Mana Potions</Text>
           <Text style={[styles.text]}>23 Health Potions</Text>
-          <Text style={[styles.text]}>Basic Sword</Text>
-          <Text style={[styles.text]}>Basic Shield</Text>
+          <Text style={[styles.text]}>Basic Staff</Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

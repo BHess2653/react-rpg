@@ -16,7 +16,6 @@ export default class Character extends React.Component {
         <TextInput style={styles.textInput} placeholder={"Race..."}/>
         <TextInput style={styles.textInput} placeholder={"Class..."}/>
         <TextInput style={styles.textInput} placeholder={"Backstory..."}/>
-        <TextInput style={styles.textInput} placeholder={"Starting Ability..."}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Joined', { user: 'New Game' })}
