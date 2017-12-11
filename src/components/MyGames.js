@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontFamily: 'Avenir',
     fontWeight: '500',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 25,
     width: 350,
     height: 50,

@@ -10,24 +10,27 @@ export default class Login extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Username"}/>
-        <TextInput style={styles.textInput} placeholder={"Password"}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu')}
-        ><Text style={styles.btnTxt}>Sign-In</Text></Button>
+      <View style={styles.main}>
+        <View style={styles.menu}>
+          <TextInput style={styles.textInput} placeholder={"Username"}/>
+          <TextInput style={styles.textInput} placeholder={"Password"}/>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#007aff'}]}
+            onPress={() => navigate('Menu')}
+          ><Text style={styles.btnTxt}>Sign-In</Text></Button>
+        </View>
 
-        <TextInput style={styles.textInput} placeholder={"E-mail"}/>
-        <TextInput style={styles.textInput} placeholder={"Username"}/>
-        <TextInput style={styles.textInput} placeholder={"Password"}/>
-        <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu')}
-        ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
+        <View style={styles.menu}>
+          <TextInput style={styles.textInput} placeholder={"E-mail"}/>
+          <TextInput style={styles.textInput} placeholder={"Username"}/>
+          <TextInput style={styles.textInput} placeholder={"Password"}/>
+          <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
+          <Button
+            style={[styles.btns, style={backgroundColor: '#007aff'}]}
+            onPress={() => navigate('Menu')}
+          ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
+        </View>
       </View>
-
     );
   }
 }
@@ -39,8 +42,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  currentGames: {
-    paddingTop: 100,
+  main: {
+    paddingTop: 80,
+  },
+  menu: {
+    paddingTop: 20,
   },
   text: {
     fontFamily: 'Avenir',
