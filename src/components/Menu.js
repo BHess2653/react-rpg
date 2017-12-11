@@ -3,20 +3,34 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-class NewGame extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: 'New Game',
-  });
+export default class ProfileScreen extends React.Component {
+  static navigationOptions = {
+    title: 'GameMaster',
+  };
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Game Name?"}/>
-        <TextInput style={styles.textInput} placeholder={"How many players?"}/>
+      <View>
+        <Image
+          style={styles.image}
+          source={require('../img/icon3.png')}
+        />
+        <Button
+          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+          onPress={() => navigate('New', { user: 'New Game' })}
+        ><Text style={styles.btnTxt}>New Game</Text></Button>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Players', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Create Game</Text></Button>
+          onPress={() => navigate('Join', { user: 'Current Games' })}
+        ><Text style={styles.btnTxt}>Join Game</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#007aff'}]}
+          onPress={() => navigate('MyGames')}
+        ><Text style={styles.btnTxt}>My Games</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#e83434'}]}
+          onPress={() => navigate('Log')}
+        ><Text style={[styles.btnTxt,style={fontSize: 20}]}>Logout</Text></Button>
       </View>
     );
   }

@@ -3,7 +3,7 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-class NewGame extends React.Component {
+export default class NewGame extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'New Game',
   });

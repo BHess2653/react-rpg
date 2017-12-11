@@ -3,20 +3,24 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-class NewGame extends React.Component {
+export default class Character extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: 'New Game',
+    title: 'Character',
   });
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Game Name?"}/>
-        <TextInput style={styles.textInput} placeholder={"How many players?"}/>
+        <TextInput style={styles.textInput} placeholder={"Name..."}/>
+        <TextInput style={styles.textInput} placeholder={"Gender..."}/>
+        <TextInput style={styles.textInput} placeholder={"Race..."}/>
+        <TextInput style={styles.textInput} placeholder={"Class..."}/>
+        <TextInput style={styles.textInput} placeholder={"Backstory..."}/>
+        <TextInput style={styles.textInput} placeholder={"Starting Ability..."}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Players', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Create Game</Text></Button>
+        ><Text style={styles.btnTxt}>Finish</Text></Button>
       </View>
     );
   }
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontFamily: 'Avenir',
     fontWeight: '500',
-    textAlign: 'center',
+    textAlign: 'left',
     fontSize: 25,
     width: 350,
     height: 50,

@@ -3,21 +3,31 @@ import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegi
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Button from 'apsl-react-native-button';
 
-class NewGame extends React.Component {
+export default class Login extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: 'New Game',
+    title: 'Sign-In | Sign-Up',
   });
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Game Name?"}/>
-        <TextInput style={styles.textInput} placeholder={"How many players?"}/>
+        <TextInput style={styles.textInput} placeholder={"Username"}/>
+        <TextInput style={styles.textInput} placeholder={"Password"}/>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Players', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Create Game</Text></Button>
+          onPress={() => navigate('Profile')}
+        ><Text style={styles.btnTxt}>Sign-In</Text></Button>
+
+        <TextInput style={styles.textInput} placeholder={"E-mail"}/>
+        <TextInput style={styles.textInput} placeholder={"Username"}/>
+        <TextInput style={styles.textInput} placeholder={"Password"}/>
+        <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#007aff'}]}
+          onPress={() => navigate('Profile')}
+        ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
       </View>
+
     );
   }
 }
