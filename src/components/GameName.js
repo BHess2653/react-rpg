@@ -11,10 +11,18 @@ export default class GameName extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <Text style={styles.text}>Waiting...</Text>
-        <Text style={styles.text}>Waiting...</Text>
-        <Text style={styles.text}>Waiting...</Text>
-        <Text style={styles.text}>Waiting...</Text>
+      <Button
+        style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+      ><Text style={styles.btnTxt}>Waiting...</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+        ><Text style={styles.btnTxt}>Waiting...</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+        ><Text style={styles.btnTxt}>Waiting...</Text></Button>
+        <Button
+          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+        ><Text style={styles.btnTxt}>Waiting...</Text></Button>
         <Button
           style={[styles.btns, style={backgroundColor: '#007aff'}]}
           onPress={() => navigate('Menu', { user: 'New Game' })}
