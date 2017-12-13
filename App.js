@@ -14,13 +14,6 @@ import Character from './src/components/Character';
 import PlayerView from './src/components/PlayerView';
 import * as firebase from 'firebase';
 
-firebase.initializeApp({
-    apiKey: "AIzaSyCwhwQBvZsscmU8Tcee6kTK557Mn5MO9nk",
-    authDomain: "react-rpg-61b84.firebaseapp.com",
-    databaseURL: "https://react-rpg-61b84.firebaseio.com",
-    storageBucket: "react-rpg-61b84.appspot.com"
-});
-
 export const SimpleApp = StackNavigator({
   Log: { screen: Login },
   Menu: { screen: Menu },
@@ -35,6 +28,14 @@ export const SimpleApp = StackNavigator({
 });
 
 export default class App extends React.Component {
+  componentWillMount() {
+      firebase.initializeApp({
+          apiKey: 'AIzaSyCwhwQBvZsscmU8Tcee6kTK557Mn5MO9nk',
+          authDomain: 'react-rpg-61b84.firebaseapp.com',
+          databaseURL: 'https://react-rpg-61b84.firebaseio.com',
+          storageBucket: 'react-rpg-61b84.appspot.com'
+      });
+  }
   render() {
     return <SimpleApp />;
   }
