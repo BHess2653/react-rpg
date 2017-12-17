@@ -14,9 +14,8 @@ firebase.initializeApp({
 
 export default class App extends React.Component {
   render() {
-    return <SimpleApp />;
     return <SignedOut />;
-    
+    return <SimpleApp />;
   }
 }
 
