@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class Character extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -11,15 +11,25 @@ export default class Character extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Name..."}/>
-        <TextInput style={styles.textInput} placeholder={"Gender..."}/>
-        <TextInput style={styles.textInput} placeholder={"Race..."}/>
-        <TextInput style={styles.textInput} placeholder={"Class..."}/>
-        <TextInput style={styles.textInput} placeholder={"Backstory..."}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Joined', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Finish</Text></Button>
+        <Card>
+          <FormLabel>Name</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: Dahaka" />
+          <FormLabel>Gender</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: Male" />
+          <FormLabel>Race</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: Human" />
+          <FormLabel>Class</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: Paladin" />
+          <FormLabel>Backstory</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: I was once a noble man" />
+
+          <Button
+            buttonStyle={{ marginTop: 20 }}
+            backgroundColor='#007aff'
+            title="Finish"
+            onPress={() => navigate('Joined')}
+          />
+        </Card>
       </View>
     );
   }
@@ -36,13 +46,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'left',
     fontSize: 25,

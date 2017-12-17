@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'left',
     fontSize: 25,

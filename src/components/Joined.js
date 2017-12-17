@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class Joined extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -12,31 +12,39 @@ export default class Joined extends React.Component {
     return (
       <View style={styles.currentGames}>
         <Text style={styles.info}>Click on a Player to View their Inventory</Text>
-        <View>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-            onPress={() => navigate('PlayerView', { user: 'New Game' })}
-          ><Text style={styles.btnTxtNew}>Dahaka - Male - Paladin</Text></Button>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-          ><Text style={styles.btnTxtNew}>Waiting...</Text></Button>
-        </View>
-        <View>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#007aff'}]}
-            onPress={() => navigate('Menu', { user: 'New Game' })}
-          ><Text style={styles.btnTxt}>Home</Text></Button>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#007aff'}]}
-            onPress={() => navigate('MyGames', { user: 'New Game' })}
-          ><Text style={styles.btnTxt}>My Games</Text></Button>
-        </View>
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Dahaka - Male - Paladin"
+          onPress={() => navigate('PlayerView')}
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Waiting..."
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Waiting..."
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Waiting..."
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="Home"
+          onPress={() => navigate('Menu')}
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="My Games"
+          onPress={() => navigate('MyGames')}
+        />
       </View>
     );
   }
@@ -53,13 +61,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'left',
     fontSize: 25,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class Players extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -14,14 +14,17 @@ export default class Players extends React.Component {
         <Text style={styles.text}>Send this code to your friends</Text>
         <Text style={styles.text}>Code: cQ4Bx8</Text>
         <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu')}>
-          <Text style={styles.btnTxt}>Link: link.com/cQ4Bx8</Text>
-        </Button>
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="Link: link.com/cQ4Bx8"
+          onPress={() => navigate('Menu')}
+        />
         <Button
-          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Done"
           onPress={() => navigate('GameName')}
-        ><Text style={styles.btnTxt}>Done</Text></Button>
+        />
       </View>
     );
   }
@@ -38,13 +41,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,

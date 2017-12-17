@@ -65,6 +65,7 @@ export const SimpleApp = StackNavigator({
   GameName: { screen: GameName },
   Character: { screen: Character },
   PlayerView: { screen: PlayerView },
+  SignIn: { screen:SignIn },
 });
 
 AppRegistry.registerComponent('SignedOut', () => SignedOut);

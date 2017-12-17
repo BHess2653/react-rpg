@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class MyGames extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -11,14 +11,18 @@ export default class MyGames extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-      <Button
-        style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-        onPress={() => navigate('Joined', { user: 'New Game' })}
-      ><Text style={styles.btnTxt}>Game Name</Text></Button>
         <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Menu', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Home</Text></Button>
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="Game Name"
+          onPress={() => navigate('Joined')}
+        />
+        <Button
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="Home"
+          onPress={() => navigate('Menu')}
+        />
       </View>
     );
   }
@@ -35,13 +39,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'left',
     fontSize: 25,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class Menu extends React.Component {
   static navigationOptions = {
@@ -16,21 +16,29 @@ export default class Menu extends React.Component {
           source={require('../img/icon3.png')}
         />
         <Button
-          style={[styles.btns, style={backgroundColor: '#5cb75c'}]}
-          onPress={() => navigate('New', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>New Game</Text></Button>
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#5cb75c'
+          title="New Game"
+          onPress={() => navigate('New')}
+        />
         <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Join', { user: 'Current Games' })}
-        ><Text style={styles.btnTxt}>Join Game</Text></Button>
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="Join Game"
+          onPress={() => navigate('Join')}
+        />
         <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#007aff'
+          title="My MyGames"
           onPress={() => navigate('MyGames')}
-        ><Text style={styles.btnTxt}>My Games</Text></Button>
+        />
         <Button
-          style={[styles.btns, style={backgroundColor: '#e83434'}]}
-          onPress={() => navigate('SignUp')}
-        ><Text style={[styles.btnTxt,style={fontSize: 20}]}>Logout</Text></Button>
+          buttonStyle={{ marginTop: 20 }}
+          backgroundColor='#e83434'
+          title="Logout"
+          onPress={() => navigate('SignIn')}
+        />
       </View>
     );
   }
@@ -47,13 +55,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,

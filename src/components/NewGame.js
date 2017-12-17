@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
 
 export default class NewGame extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -11,12 +11,19 @@ export default class NewGame extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.currentGames}>
-        <TextInput style={styles.textInput} placeholder={"Game Name?"}/>
-        <TextInput style={styles.textInput} placeholder={"How many players?"}/>
-        <Button
-          style={[styles.btns, style={backgroundColor: '#007aff'}]}
-          onPress={() => navigate('Players', { user: 'New Game' })}
-        ><Text style={styles.btnTxt}>Create Game</Text></Button>
+        <Card>
+          <FormLabel>Game Name</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: Epic Quest" />
+          <FormLabel>How many players?</FormLabel>
+          <FormInput secureTextEntry placeholder="Example: 4" />
+
+          <Button
+            buttonStyle={{ marginTop: 20 }}
+            backgroundColor='#007aff'
+            title="Create Game"
+            onPress={() => navigate('Players')}
+          />
+        </Card>
       </View>
     );
   }
@@ -33,13 +40,13 @@ const styles = StyleSheet.create({
     paddingTop: 100,
   },
   text: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'center',
     fontSize: 25,
   },
   textInput: {
-    fontFamily: 'Avenir',
+    // fontFamily: 'Avenir',
     fontWeight: '500',
     textAlign: 'left',
     fontSize: 25,
