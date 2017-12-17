@@ -29,7 +29,7 @@ export default class Menu extends React.Component {
         ><Text style={styles.btnTxt}>My Games</Text></Button>
         <Button
           style={[styles.btns, style={backgroundColor: '#e83434'}]}
-          onPress={() => navigate('Log')}
+          onPress={() => navigate('SignUp')}
         ><Text style={[styles.btnTxt,style={fontSize: 20}]}>Logout</Text></Button>
       </View>
     );

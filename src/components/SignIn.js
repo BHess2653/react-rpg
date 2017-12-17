@@ -1,35 +1,27 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View, Image, scrollView, TextInput, AppRegistry } from 'react-native';
+import { Card, Button, FormLabel, FormInput } from "react-native-elements";
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import Button from 'apsl-react-native-button';
+import { onSignIn } from "../Auth";
 
-export default class Login extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: 'Sign-In | Sign-Up',
-  });
+export default class SignIn extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.main}>
-        <View style={styles.menu}>
-          <TextInput style={styles.textInput} placeholder={"Username"}/>
-          <TextInput style={styles.textInput} placeholder={"Password"}/>
-          <Button
-            style={[styles.btns, style={backgroundColor: '#007aff'}]}
-            onPress={() => navigate('Menu')}
-          ><Text style={styles.btnTxt}>Sign-In</Text></Button>
-        </View>
+      <View style={{ paddingVertical: 20 }}>
+        <Card>
+          <FormLabel>Email</FormLabel>
+          <FormInput placeholder="Email address..." />
+          <FormLabel>Password</FormLabel>
+          <FormInput secureTextEntry placeholder="Password..." />
 
-        <View style={styles.menu}>
-          <TextInput style={styles.textInput} placeholder={"E-mail"}/>
-          <TextInput style={styles.textInput} placeholder={"Username"}/>
-          <TextInput style={styles.textInput} placeholder={"Password"}/>
-          <TextInput style={styles.textInput} placeholder={"Confirm Password"}/>
           <Button
-            style={[styles.btns, style={backgroundColor: '#007aff'}]}
+            buttonStyle={{ marginTop: 20 }}
+            backgroundColor="#007aff"
+            title="SIGN-IN"
             onPress={() => navigate('Menu')}
-          ><Text style={styles.btnTxt}>Sign-Up</Text></Button>
-        </View>
+          />
+        </Card>
       </View>
     );
   }
